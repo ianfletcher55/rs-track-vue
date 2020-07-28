@@ -5,6 +5,8 @@ import About from '../views/About.vue'
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import BoardIndex from "../views/BoardIndex.vue";
+import BoardShow from "../views/BoardShow.vue";
 
 Vue.use(VueRouter)
 
@@ -33,6 +35,16 @@ const routes = [
     path: "/logout",
     name: "logout",
     component: Logout
+  },
+  {
+    path: "/boards",
+    name: "board-index",
+    component: BoardIndex
+  },
+  {
+    path: "/boards/:id",
+    name: "board-show",
+    component: BoardShow
   }
 ]
 
