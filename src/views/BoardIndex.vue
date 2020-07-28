@@ -5,6 +5,11 @@
       <li v-for="error in errors">{{ error }}</li>
     </ul>
 
+    <div>
+      Name: <input type="text" v-model="newBoardName"> <br>
+      <button v-on:click="createBoard()">Add Board</button>
+    </div>
+
     <div v-for="board in boards">
       <p>{{ board.name }}</p>
       <router-link :to="`/boards/${board.id}`">View Board</router-link> <br>
@@ -12,6 +17,7 @@
       <button v-on:click="currentBoard = board">Edit Board</button> <br>
       <button v-on:click="destroyBoard(currentBoard)">Delete Board</button>
     </div>
+
   </div>
 </template>
 
@@ -57,6 +63,22 @@ export default {
         var index = this.boards.indexOf(board);
         this.boards.splice(index, 1);
       });
+    },
+    createBoard: function() {
+      var params = {
+        name: this.newBoardName
+      };
+      axios
+        .post("/api/boards", params)
+        .then(response => {
+          console.log("Successfully created new board.", response.data);
+          this.boards.push(response.data);
+          this.newBoardName = "";
+        })
+        .catch(error => {
+          console.log(error.response.data.errors);
+          this.errors = error.response.data.errors;
+        });
     }
   }
 };
