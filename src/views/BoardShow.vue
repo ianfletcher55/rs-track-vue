@@ -5,7 +5,7 @@
       <h2>{{ list.name }}</h2>
       <div v-for="quest in list.quests">
         {{ quest.name }} <br>
-        <button v-on:click="openLink()">Wiki Link</button>
+        <button v-on:click="quest_name = quest.name, openLink()">Wiki Link</button>
       </div>
       <div v-for="item in list.items">
         {{ item.name }}
@@ -29,7 +29,8 @@ export default {
   data: function() {
     return {
       board: {},
-      linkName: "Rag_and_Bone_Man"
+      quest_name: "",
+      linkName: ""
     };
   },
   created: function() {
@@ -40,6 +41,10 @@ export default {
   },
   methods: {
     openLink: function() {
+      this.linkName = this.quest_name
+        .replace(/ /g, "_")
+        .replace(/&/g, "%26")
+        .replace(/'/g, "%27");
       window.open(`https://oldschool.runescape.wiki/w/${this.linkName}`);
     }
   }
