@@ -54,7 +54,7 @@ export default {
         .replace(/ /g, "_")
         .replace(/&/g, "%26")
         .replace(/'/g, "%27")
-        .replace(/+/g, "%2B");
+        .replace("+", "%2B");
       window.open(`https://oldschool.runescape.wiki/w/${this.linkName}`);
     }
   }
