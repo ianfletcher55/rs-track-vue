@@ -5,10 +5,11 @@
       <h2>{{ list.name }}</h2>
       <div v-for="quest in list.quests">
         {{ quest.name }} <br>
-        <button v-on:click="quest_name = quest.name, openLink()">Wiki Link</button>
+        <button v-on:click="quest_name = quest.name, openQuestLink()">Wiki Link</button>
       </div>
       <div v-for="item in list.items">
-        {{ item.name }}
+        {{ item.name }} <br>
+        <button v-on:click="item_name = item.name, openItemLink()">Wiki Link</button>
       </div>
       <div v-for="note in list.notes">
         {{ note.text }}
@@ -30,6 +31,7 @@ export default {
     return {
       board: {},
       quest_name: "",
+      item_name: "",
       linkName: ""
     };
   },
@@ -40,11 +42,19 @@ export default {
     });
   },
   methods: {
-    openLink: function() {
+    openQuestLink: function() {
       this.linkName = this.quest_name
         .replace(/ /g, "_")
         .replace(/&/g, "%26")
         .replace(/'/g, "%27");
+      window.open(`https://oldschool.runescape.wiki/w/${this.linkName}`);
+    },
+    openItemLink: function() {
+      this.linkName = this.item_name
+        .replace(/ /g, "_")
+        .replace(/&/g, "%26")
+        .replace(/'/g, "%27")
+        .replace(/+/g, "%2B");
       window.open(`https://oldschool.runescape.wiki/w/${this.linkName}`);
     }
   }
