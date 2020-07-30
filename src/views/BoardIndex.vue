@@ -15,7 +15,7 @@
       <router-link :to="`/boards/${board.id}`">View Board</router-link> <br>
       <p v-if="currentBoard == board">Name: <input type="text" v-model="currentBoard.name"><button v-on:click="updateBoard(currentBoard)">Update</button></p>
       <button v-on:click="currentBoard = board">Edit Board</button> <br>
-      <button v-on:click="destroyBoard(currentBoard)">Delete Board</button>
+      <button v-on:click="currentBoard = board, destroyBoard(currentBoard)">Delete Board</button>
     </div>
 
   </div>
@@ -40,7 +40,6 @@ export default {
       console.log("All Boards", response.data);
       this.boards = response.data;
     });
-    console.log("index");
   },
   methods: {
     updateBoard: function(board) {
@@ -57,10 +56,10 @@ export default {
           console.log(error.response.data.errors);
         });
     },
-    destroyBoard: function(board) {
-      axios.delete(`/api/boards/${board.id}`).then(respone => {
-        console.log("Successfully deleted board", respone.data);
-        var index = this.boards.indexOf(board);
+    destroyBoard: function(currentBoard) {
+      axios.delete(`/api/boards/${currentBoard.id}`).then(response => {
+        console.log("Successfully deleted board", response.data);
+        var index = this.boards.indexOf(currentBoard);
         this.boards.splice(index, 1);
       });
     },
