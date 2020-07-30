@@ -7,7 +7,7 @@
         <input type="text" v-model="questKeyword"><button v-on:click="questKeywordSearch()">Search for Quest</button> <br>
         <div v-if="apiQuestResults">
         <div v-for="result in apiQuestResults">
-          <p>{{ result.name }}<button v-on:click="createListQuest(list, result)">Add Quest</button></p>
+          <p>{{ result.name }}<button v-on:click="createListQuest(list, result), apiQuestResults = []">Add Quest</button></p>
         </div>
       </div>
       </div>
@@ -15,7 +15,7 @@
         <input type="text" v-model="itemKeyword"><button v-on:click="itemKeywordSearch()">Search for Item</button> <br>
         <div v-if="apiItemResults">
         <div v-for="result in apiItemResults">
-          <p>{{ result.name }}<button v-on:click="createListItem(list, result)">Add Item</button></p>
+          <p>{{ result.name }}<button v-on:click="createListItem(list, result), apiItemResults = []">Add Item</button></p>
         </div>
       </div>
       </div>
