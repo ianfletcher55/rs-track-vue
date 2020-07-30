@@ -5,24 +5,22 @@
       <h2>{{ list.name }}</h2>
       <div v-if="list.name == 'Quests'">
         <input type="text" v-model="questKeyword"><button v-on:click="questKeywordSearch()">Search for Quest</button> <br>
+        <div v-if="apiQuestResults">
+        <div v-for="result in apiQuestResults">
+          <p>{{ result.name }}<button v-on:click="createListQuest(list, result)">Add Quest</button></p>
+        </div>
+      </div>
       </div>
       <div v-if="list.name == 'Item Wishlist'">
         <input type="text" v-model="itemKeyword"><button v-on:click="itemKeywordSearch()">Search for Item</button> <br>
-      </div>
-      <div v-if="list.name == 'Notes'">
-        <input type="text" v-model="newNoteText"><button v-on:click="createNote(list)">Add Note</button> <br>
-      </div>
-
-      <div v-if="apiItemResults">
+        <div v-if="apiItemResults">
         <div v-for="result in apiItemResults">
           <p>{{ result.name }}<button v-on:click="createListItem(list, result)">Add Item</button></p>
         </div>
       </div>
-
-      <div v-if="apiQuestResults">
-        <div v-for="result in apiQuestResults">
-          <p>{{ result.name }}<button v-on:click="createListQuest(list, result)">Add Quest</button></p>
-        </div>
+      </div>
+      <div v-if="list.name == 'Notes'">
+        <input type="text" v-model="newNoteText"><button v-on:click="createNote(list)">Add Note</button> <br>
       </div>
 
       <div v-for="quest in list.quests">
