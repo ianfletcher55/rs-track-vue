@@ -1,5 +1,6 @@
 <template>
   <div class="board-show">
+
     <h1>{{ board.name }}</h1>
     <div v-for="list in board.lists">
       <h2>{{ list.name }}</h2>
@@ -29,7 +30,7 @@
         <button v-on:click="destroyListQuest(quest, list)">Delete Quest</button>
       </div>
       <div v-for="item in list.items">
-        {{ item.name }} <br>
+        <h3>{{ item.name }} <img :src="`data:image/jpeg;base64,${item.icon}`"></h3> <br>
         <a target="_blank" :href="`https://oldschool.runescape.wiki/w/${item.name.replace(/ /g, '_').replace(/&/g, '%26').replace(/'/g, '%27').replace('+', '%2B')}`">Wiki Link</a> <br>
         <button v-on:click="destroyListItem(item, list)">Delete Item</button>
       </div>
@@ -47,6 +48,10 @@
 </template>
 
 <style>
+img {
+  padding: 5px;
+  width: 60px;
+}
 </style>
 
 <script>
