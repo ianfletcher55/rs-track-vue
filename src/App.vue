@@ -1,26 +1,68 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/about">About</router-link> |
-      <router-link to="/boards">Boards</router-link> |
-      <span v-if="isLoggedIn()">
-        <router-link to="/logout">Logout</router-link>
-      </span>
-      <span v-else>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/login">Login</router-link> |
-        <router-link to="/signup">Sign Up</router-link>
-      </span>
-    </div>
+
+  <div class="header">
+    <header class="bg-white pt-10 bg-img bg-fixed" style="background-image: url(assets/images/erika-header.jpg)">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><img src="/assets/images/logo.png" alt=""></a>
+          
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-toggle" aria-controls="navbar-toggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+            <span class="sr-only">Toggle navigation</span>
+          </button><!-- / navbar-toggler -->
+
+          <div class="collapse navbar-collapse" id="navbar-toggle">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link smooth-scroll" href="/">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link smooth-scroll" href="/boards">BOARDS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link smooth-scroll" href="/login">LOGIN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link smooth-scroll" href="/logout">LOGOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link smooth-scroll" href="/signup">SIGN UP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link smooth-scroll last-menu-item" href="/about">ABOUT</a>
+              </li>
+            </ul><!-- / navbar-nav -->
+          </div><!-- / navbar-collapse -->
+        </div><!-- / container -->
+      </nav><!-- / navbar -->
+    </header>
 
     <button v-on:click="showUser()">View Account Settings</button>
     <div v-if="user != {}">
-      <p>{{ user.email }}</p>
-      <p v-if="user != {}">Email: <input type="text" v-model="user.email"><button v-on:click="updateUser(user)">Update</button></p>
-      <p v-if="user != {}"><button v-on:click="destroyUser(user)">Delete Account</button></p>
+    <p>{{ user.email }}</p>
+    <p v-if="user != {}">Email: <input type="text" v-model="user.email"><button v-on:click="updateUser(user)">Update</button></p>
+    <p v-if="user != {}"><button v-on:click="destroyUser(user)">Delete Account</button></p>
     </div>
+  </div>
 
-    <router-view/>
+  <router-view/>
+
+  <div class="footer">
+    <div class="container text-center">
+    <div class="row vcenter">
+      <div class="col-lg-6 footer-left-area">
+      <p>© 2020 <span class="fw-regular">ERIKA</span>. All Rights Reserved.</p>
+      </div>
+      <div class="col-lg-6 footer-right-area">
+      <p>Designed with <span class="fa fa-heart text-danger text-xs va-middle"></span> by <a href="https://erikathemes.com" class="footer-link" target="_blank">ErikaThemes</a></p>
+      </div><!-- / social-icons -->
+    </div><!-- / row -->
+    </div><!-- / container -->
+  </div>
+
   </div>
 </template>
 
