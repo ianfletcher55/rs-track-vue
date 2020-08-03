@@ -5,7 +5,7 @@
   <img src="https://vignette.wikia.nocookie.net/2007scape/images/3/33/Mainpage_logo.png/revision/latest?cb=20190107005620" alt="">
   <button><router-link to="/signup">Sign Up</router-link></button>
   <button><router-link to="/login">Login</router-link></button> -->
-    <header class="bg-white pt-10 mobile-header-space bg-img" style="background-image: url(../../assets/images/login-art.jpg)">
+    <header class="bg-white pt-10 mobile-header-space bg-img" style="background-image: url(../../assets/images/home-screen.jpg)">
     <div class="full-height v-center">
       <div class="container">
         <div class="row v-center">

@@ -2,8 +2,8 @@
   <div id="app">
 
   <div class="header">
-    <header class="bg-white pt-10 bg-img bg-fixed" style="background-image: url(assets/images/erika-header.jpg)">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <header class="bg-white pt-10 bg-img bg-fixed" style="">
+    <nav class="navbar navbar-expand-lg navbar-inverse bg-inverse">
         <div class="container">
           <a class="navbar-brand" href="index.html"><img src="/assets/images/logo.png" alt=""></a>
           
@@ -40,28 +40,28 @@
       </nav><!-- / navbar -->
     </header>
 
-    <button v-on:click="showUser()">View Account Settings</button>
+    <!-- <button v-on:click="showUser()">View Account Settings</button>
     <div v-if="user != {}">
     <p>{{ user.email }}</p>
     <p v-if="user != {}">Email: <input type="text" v-model="user.email"><button v-on:click="updateUser(user)">Update</button></p>
     <p v-if="user != {}"><button v-on:click="destroyUser(user)">Delete Account</button></p>
-    </div>
+    </div> -->
   </div>
 
   <router-view/>
 
-  <div class="footer">
-    <div class="container text-center">
-    <div class="row vcenter">
+  <footer class="dark bg-inverse">
+  <div class="container text-center">
+    <div class="row v-center">
       <div class="col-lg-6 footer-left-area">
-      <p>© 2020 <span class="fw-regular">ERIKA</span>. All Rights Reserved.</p>
-      </div>
+        <p>© 2020 <span class="fw-regular">ERIKA</span>. All Rights Reserved.</p>
+      </div><!-- / footer-left-area -->
       <div class="col-lg-6 footer-right-area">
-      <p>Designed with <span class="fa fa-heart text-danger text-xs va-middle"></span> by <a href="https://erikathemes.com" class="footer-link" target="_blank">ErikaThemes</a></p>
-      </div><!-- / social-icons -->
+        <p>Designed with <span class="fa fa-heart text-danger text-xs va-middle"></span> by <a href="https://erikathemes.com" class="footer-link" target="_blank">ErikaThemes</a></p>
+      </div><!-- / footer-right-area -->
     </div><!-- / row -->
-    </div><!-- / container -->
-  </div>
+  </div><!-- / container -->
+  </footer>
 
   </div>
 </template>
