@@ -1,17 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+    <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="ERIKA - Bootstrap 4 UI & Components">
+    <meta name="author" content="erikathemes.com">
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/favicon.png">
+    <!-- Site Title -->
+    <title>ERIKA - Bootstrap 4 UI & Components</title>
+    <!-- Bootstrap 4 core CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/owl.carousel.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/assets/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/css/themify-icons.css">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <header class="bg-white pt-10 bg-img bg-fixed" style="background-image: url(/assets/images/erika-header.jpg)">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="/assets/images/logo.png" alt=""></a>
+                
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-toggle" aria-controls="navbar-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                    <span class="sr-only">Toggle navigation</span>
+                </button><!-- / navbar-toggler -->
+
+                <div class="collapse navbar-collapse" id="navbar-toggle">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#ui-kit">UI KIT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#components">COMPONENTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll" href="#sections">SECTIONS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smooth-scroll last-menu-item" href="#templates">TEMPLATES</a>
+                        </li>
+                    </ul><!-- / navbar-nav -->
+                </div><!-- / navbar-collapse -->
+            </div><!-- / container -->
+        </nav><!-- / navbar -->
+        <div class="height-90 v-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1 class="mb-5">ERIKA</h1>
+                        <h6 class="mb-30 opc-75">UI & COMPONENTS KIT</h6>
+                        <p class="mb-30">Launch your next Bootstrap project in no-time! Create any type of app or website using this amazing Bootstrap UI & Components Kit.</p>
+                        <p>
+                            <a href="#ui-kit" class="btn btn-black pill m-10 ml-0 smooth-scroll"><span class="ti-book mr-2"></span> <span class="fs-12">LEARN MORE</span></a>
+                            <a href="#x" class="btn btn-primary pill m-10 ml-0"><span class="ti-shopping-cart mr-2"></span> <span class="fs-12">BUY NOW</span></a>
+                        </p>
+                    </div><!-- / column -->
+                    <div class="col-sm-6">&nbsp;</div><!-- / column -->
+                </div><!-- / row -->
+            </div><!-- / container -->
+        </div><!-- / height-90 -->
+    </header>
+
     <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+    <footer>
+        <div class="container text-center">
+            <div class="row vcenter">
+                <div class="col-lg-6 footer-left-area">
+                    <p>© 2020 <span class="fw-regular">ERIKA</span>. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 footer-right-area">
+                    <p>Designed with <span class="fa fa-heart text-danger text-xs va-middle"></span> by <a href="https://erikathemes.com" class="footer-link" target="_blank">ErikaThemes</a></p>
+                </div><!-- / social-icons -->
+            </div><!-- / row -->
+        </div><!-- / container -->
+    </footer>
+
+<!-- Core JavaScript -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<!-- / Core JavaScript -->
+
+<!-- preloader -->
+<script src="/assets/js/preloader.js"></script>
+<!-- / preloader -->
+
+<!-- Smooth Scrolling -->
+<script src="/assets/js/jquery.easing.min.js"></script>
+<script src="/assets/js/smooth-scroll.js"></script>
+<!-- / Smooth Scrolling -->
+
+</body>
+
 </html>

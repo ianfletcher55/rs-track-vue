@@ -1,0 +1,924 @@
+/*----------------    media screens    ----------------*/
+
+/*-------------    max-widths    -------------*/
+
+/*-------       1200px       -------*/
+
+@media only screen and (max-width: 1200px) {
+.tablet-xl-text-center {
+    text-align: center !important;
+}
+
+.tablet-xl-fw {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.tablet-xl-top {
+    margin-bottom: 15px !important;
+}
+
+.tablet-xl-top-30 {
+    margin-bottom: 30px !important;
+}
+
+.tablet-xl-top-45 {
+    margin-bottom: 45px !important;
+}
+
+.tablet-xl-top-60 {
+    margin-bottom: 60px !important;
+}
+
+.tablet-xl-hidden, .hide-tablet-xl {
+    display: none;
+}
+
+.navbar-expand-lg .form-inline {
+    display: block;
+    margin: .5rem auto;
+}
+
+.container {
+    max-width: 90%;
+}
+}
+
+/*-------       end of 1200px       -------*/
+
+
+
+/*-------       1024px       -------*/
+
+@media only screen and (max-width: 1024px) {
+.bg-fixed {
+    background-attachment: scroll !important;
+}
+
+.hide-tablet-landscape, .hide-tablet-ls {
+    display: none !important;
+}
+}
+
+/*-------       end of 1024px       -------*/
+
+
+
+/*-------       991px       -------*/
+
+@media only screen and (max-width: 991px) {
+.tablet-lg-text-center {
+    text-align: center !important;
+}
+
+.tablet-lg-fw {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.tablet-lg-top {
+    margin-bottom: 15px !important;
+}
+
+.tablet-lg-top-30 {
+    margin-bottom: 30px !important;
+}
+
+.tablet-lg-top-45 {
+    margin-bottom: 45px !important;
+}
+
+.tablet-lg-top-60 {
+    margin-bottom: 60px !important;
+}
+
+.hide-tablet-lg, .tablet-lg-hidden {
+    display: none !important;
+}
+
+.w50, .w-50 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.w40, .w-40 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.w30, .w-30 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.w20, .w-20 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.w10, .w-10 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.navbar-expand-lg>.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.navbar-expand-lg.navbar {
+    padding: 0.885rem 0;
+}
+
+.navbar-expand-lg.menu-line.nav-scroll li a span {
+    padding-bottom: 8px;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    padding-top: 0; 
+    padding-bottom: 0;
+    margin-top: 1rem;
+}
+
+.navbar-expand-lg .navbar-collapse .nav-link {
+    padding: 1rem 0;
+}
+
+.navbar-expand-lg .navbar-brand {
+    margin-left: 0;
+}
+
+.navbar-expand-lg.navbar-light.bg-transparent .navbar-collapse {
+    background-color: $white !important;
+}
+
+.navbar-expand-lg.navbar-inverse.bg-transparent .navbar-collapse {
+    background-color: $black !important;
+}
+
+.navbar-expand-lg.stacked-menu .navbar-brand {
+    padding-top: 0.5rem;
+}
+
+.navbar-expand-lg .dropdown-menu {
+    background-color: transparent;
+}
+
+.navbar-expand-lg .dropdown-menu.show {
+    display: block;
+    left: 0;
+    right: 0;
+    max-width: 320px;
+}
+
+.dropdown-menu {
+    box-shadow: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dropdown-menu.mega-menu {
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    max-height: 260px;
+}
+
+.navbar-collapse {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    max-height: 380px;
+}
+
+.dropdown-item {
+    text-align: center;
+}
+
+.navbar-expand-lg .dropdown-toggle::after {
+    top: 18px;
+}
+
+.nav-icon .md-icon {
+    margin: 5px;
+}
+
+.navbar-expand-lg .form-inline {
+    display: block;
+    margin: .5rem auto;
+}
+
+.navbar-expand-lg .count {
+    top: 12px;
+    right: auto;
+    left: auto;
+    margin-top: 0;
+    margin-left: -8px;
+}
+
+.split-menu .navbar-brand {
+    display: none;
+}
+
+.split-menu .navbar-brand.mobile-brand {
+    display: contents;
+}
+
+.after-dropdown {
+    margin-left: 0;
+}
+
+.custom-menu .dropdown-toggle::after {
+    top: 14px;
+}
+
+.nav-button {
+    margin-left: 0;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+}
+
+.top-nav {
+    padding: 0.75rem 0;
+}
+
+.table-overflow {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.price-inline {
+    position: relative;
+    display: block;
+}
+
+.btn-inline {
+    position: relative;
+    display: block;
+}
+
+.footer-left-area {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.footer-center-area {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.footer-right-area {
+    text-align: center;
+}
+
+.cta .left-area {
+    text-align: center;
+}
+
+.cta .right-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta .left-area.left-aligned.tablet-center {
+    text-align: center;
+}
+
+.cta .right-area.right-aligned.tablet-center {
+    text-align: center;
+}
+}
+
+/*-------       end of 991px       -------*/
+
+
+
+/*-------       767px       -------*/
+
+@media only screen and (max-width: 767px) {
+body.components, html.components {
+    background-color: $light-grey;
+}
+
+body.bg-inverse {
+    background: $dark-grey-dark;
+}
+
+.tablet-text-center {
+    text-align: center !important;
+}
+
+.tablet-fw {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.tablet-top {
+    margin-bottom: 15px !important;
+}
+
+.tablet-top-30 {
+    margin-bottom: 30px !important;
+}
+
+.tablet-top-45 {
+    margin-bottom: 45px !important;
+}
+
+.tablet-top-60 {
+    margin-bottom: 60px !important;
+}
+
+.tablet-hidden, .hide-tablet {
+    display: none;
+}
+
+.content {
+    background: transparent;
+    padding: 30px 0;
+}
+
+.w90, .w-90 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.w80, .w-80 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.w70, .w-70 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.w60, .w-60 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.hide-tablet {
+    display: none !important;
+}
+
+.navbar-expand-sm .form-inline {
+    display: block;
+    margin: .5rem auto;
+}
+
+.navbar-expand-md .count {
+    top: 13px;
+    right: auto;
+    left: auto;
+    margin-top: 0;
+    margin-left: -8px;
+}
+
+header .breadcrumb.text-right {
+    text-align: left !important;
+    margin-top: 15px;
+}
+
+.top-nav {
+    text-align: center;
+}
+
+.top-nav .left {
+    float: none;
+    display: block;
+    text-align: center !important;
+    margin-bottom: 10px;
+}
+
+.top-nav .right {
+    float: none;
+    display: block;
+    text-align: center !important;
+}
+
+.promo-box.has-process-icon:after {
+    display: none;
+}
+
+.box-bg-image.bg-img {
+    min-height: 400px;
+}
+
+.pricing-table.featured {
+    padding: 0;
+    margin-top: 0;
+}
+
+.pricing-table.featured-2x {
+    padding: 0;
+    margin-top: 0;
+}
+
+.timeline > li > .timeline-panel {
+    width: 100%;
+}
+
+.timeline > li:not(.timeline-inverted) {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.timeline > li.timeline-inverted {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.timeline > li > .timeline-panel:before, .timeline > li > .timeline-panel:after {
+    display: none;
+}
+
+.timeline > li > .timeline-panel {
+    margin-top: 75px;
+}
+
+.modal-right .modal-dialog, .modal-left .modal-dialog {
+    width: calc(100% - 50px);
+}
+
+.cta .left-area.left-aligned.tablet-md-center {
+    text-align: center;
+}
+
+.cta .right-area.right-aligned.tablet-md-center {
+    text-align: center;
+}
+
+.header-slider-content {
+    padding: 120px 15px;
+}
+
+.data-map {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid $secondary;
+    border-bottom: 1px solid $secondary;
+}
+
+footer .text-left, footer .text-right {
+    display: block !important;
+    text-align: center !important;
+}
+
+.footer-widget-area {
+    padding: 20px 0;
+}
+
+.mobile-header-space {
+    padding-top: 80px !important;
+}
+}
+
+/*-------       end of 767px       -------*/
+
+
+
+/*-------       575px       -------*/
+
+@media only screen and (max-width: 575px) {
+
+.mobile-text-center {
+    text-align: center !important;
+}
+
+.mobile-fw {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.mobile-top {
+    margin-bottom: 15px !important;
+}
+
+.mobile-top-30 {
+    margin-bottom: 30px !important;
+}
+
+.mobile-top-45 {
+    margin-bottom: 45px !important;
+}
+
+.mobile-top-60 {
+    margin-bottom: 60px !important;
+}
+
+.hide-mobile, .mobile-hidden {
+    display: none !important;
+}
+
+.cta .left-area.left-aligned.mobile-center {
+    text-align: center !important;
+}
+
+.cta .right-area.right-aligned.mobile-center {
+    text-align: center !important;
+}
+
+.navbar-toggler-right {
+    right: 0;
+}
+
+.navbar-toggler-left {
+   left: 0;
+}
+
+.form-inline .form-control {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form-inline .btn {
+    display: block;
+    width: 70%;
+    margin: 5px auto;
+}
+
+.popover-example .popover {
+    width: 90%;
+    margin: 5%;
+}
+
+.top-menu {
+    text-align: center;
+}
+
+.top-menu .left-area {
+    display: block;
+    float: none !important;
+    margin-bottom: 10px;
+    padding: 0 !important;
+}
+
+.top-menu .right-area {
+    display: block;
+    float: none !important;
+    padding: 0 !important;
+}
+
+footer {
+    text-align: center;
+}
+}
+
+/*-------       end of 575px       -------*/
+
+
+
+/*-------       480px       -------*/
+
+@media only screen and (max-width: 480px) {
+.container {
+    max-width: 96%;
+}
+
+.mobile-sm-fw {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.hide-mobile-sm, .mobile-sm-hidden {
+    display: none !important;
+}
+
+header h1 {
+    font-size: 1.875rem;
+}
+
+header h2 {
+    font-size: 1.75rem;
+}
+
+header h3 {
+    font-size: 1.5rem;
+}
+
+.custom-form .left-area {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.custom-form .right-area {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.custom-form .left-area.long {
+    width: 100%;
+}
+
+.custom-form .right-area.long {
+    width: 100%;
+}
+
+.custom-form .left-area.short {
+    width: 100%;
+}
+
+.custom-form .right-area.short {
+    width: 100%;
+}
+
+.modal-footer.custom-form {
+    display: block;
+}
+
+.cta .left-area.left-aligned.mobile-sm-center {
+    text-align: center;
+}
+
+.cta .right-area.right-aligned.mobile-sm-center {
+    text-align: center;
+}
+
+.header-slider-content {
+    padding: 70px 15px;
+}
+
+table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+}
+
+/*-------       end of 480px       -------*/
+
+
+
+/*-------       400px       -------*/
+
+@media only screen and (max-width: 400px) {
+.mobile-xs-fw {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.hide-mobile-sm, .mobile-sm-hidden {
+    display: none !important;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.pager {
+    text-align: center;
+}
+
+.pager-left, .pager-right {
+    display: block;
+}
+
+.pager-right {
+    float: none;
+}
+}
+
+/*-------       end of 400px       -------*/
+
+/*------------- end of max-widths -------------*/
+
+
+
+/*------------- min-max-widths -------------*/
+
+@media only screen and (max-width: 991px) and (min-width: 768px)  {
+.custom-form .left-area {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.custom-form .right-area {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.custom-form .left-area.long {
+    width: 100%;
+}
+
+.custom-form .right-area.long {
+    width: 100%;
+}
+
+.custom-form .left-area.short {
+    width: 100%;
+}
+
+.custom-form .right-area.short {
+    width: 100%;
+}
+}
+
+/*------------- end of min-max-widths -------------*/
+
+
+
+/*------------- max-heights -------------*/
+
+@media only screen and (max-height: 620px )  {
+.modal-register .modal-dialog {
+    height: auto;
+}
+
+.modal-register .modal-dialog .modal-content .modal-footer {
+    position: relative;
+}
+
+.mobile-header-space {
+    padding-top: 80px !important;
+}
+}
+
+@media only screen and (max-height: 490px )  {
+.modal-login .modal-dialog {
+    height: auto;
+}
+
+.modal-login .modal-dialog .modal-content .modal-footer {
+    position: relative;
+}
+}
+
+/*------------- end of max-height -------------*/
+
+
+
+/*------------- min-widths -------------*/
+
+/*-------       1200px       -------*/
+
+@media only screen and (min-width: 1200px) {
+.container {
+    max-width: 1200px;
+}
+}
+
+/*-------       end of 1200px       -------*/
+
+
+
+/*-------       992px       -------*/
+
+@media only screen and (min-width: 992px) {
+.container.container-lg {
+    max-width: 990px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1.75rem 1.5rem;
+}
+
+.nav-item.no-nav-link {
+    padding: 0 1.5rem;
+}
+
+.nav-item.no-nav-link.last-menu-item {
+    padding-right: 0;
+}
+
+.custom-menu.menu-pills.navbar-expand-lg .navbar-nav .nav-link {
+    line-height: 1.15rem;
+    padding: 0.875rem 1.25rem;
+    margin: 1rem 0.25rem;
+}
+
+.navbar-expand-lg .last-menu-item {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+.menu-pills .navbar-nav .nav-link {
+    padding: 1rem 1.75rem;
+    margin: 0 5px;
+}
+
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar-expand-lg .mega-menu.one-column {
+    min-width: 180px;
+}
+
+.navbar-expand-lg .mega-menu.two-columns {
+    min-width: 360px;
+}
+
+.navbar-expand-lg .mega-menu.three-columns {
+    min-width: 540px;
+}
+
+.navbar-expand-lg .mega-menu.four-columns {
+    min-width: 720px;
+}
+
+.navbar-expand-lg .mega-menu.five-columns {
+    min-width: 900px;
+}
+
+.navbar-expand-lg .mega-menu.six-columns {
+    min-width: 1080px;
+}
+
+.navbar-expand-lg .icon-dropdowns .nav-link {
+    padding: .75rem !important;
+}
+
+.navbar-expand-lg.stacked-menu>.container {
+    display: block;
+}
+
+.top-nav {
+    padding: .75rem 1.25rem;
+}
+
+.col-lg-6.sub-col-left {
+    padding-right: 7.5px;
+}
+
+.col-lg-6.sub-col-right {
+    padding-left: 7.5px;
+}
+}
+
+/*-------       end of 992px       -------*/
+
+
+
+/*-------       768px       -------*/
+
+@media only screen and (min-width: 768px) {
+
+.col-md-6.sub-col-left {
+    padding-right: 7.5px;
+}
+
+.col-md-6.sub-col-right {
+    padding-left: 7.5px;
+    width: 100%;
+}
+
+#wrapper {
+    padding-left: 300px;
+}
+
+#wrapper.toggled {
+    padding-left: 0;
+}
+
+#sidebar-wrapper {
+    width: 300px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 0;
+}
+
+#page-content-wrapper {
+    position: relative;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+}
+}
+
+/*-------       end of 768px       -------*/
+
+
+
+/*-------       576px       -------*/
+
+@media only screen and (min-width: 576px) {
+.col-sm-6.sub-col-left {
+    padding-right: 7.5px;
+}
+
+.col-sm-6.sub-col-right {
+    padding-left: 7.5px;
+}
+}
+
+/*-------       end of 576px       -------*/
+
+/*------------- end of min-widths -------------*/
+
+/*---------------- end of media screens ----------------*/
