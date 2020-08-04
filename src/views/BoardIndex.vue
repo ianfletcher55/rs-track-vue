@@ -1,6 +1,9 @@
 <template>
   <div class="board-index">
-    <div class="full-height v-center">
+    <div
+      class="full-height v-center"
+      style='background-image: url("../../assets/images/boards-index.jpeg");'
+    >
       <div class="container">
         <section id="portfolio8" class="big">
           <div class="container">
@@ -20,23 +23,19 @@
                 data-groups='["skill3"]'
                 v-for="board in boards"
               >
-                <div class="card mb-0">
+                <div class="card card-inverse mb-0">
                   <div class="project m-0">
                     <figure class="portfolio-item">
                       <div class="hovereffect">
                         <img
-                          class="img-responsive"
-                          src="assets/images/placeholder.jpg"
+                          class="img-responsive full-width v-center"
+                          src="assets/images/board-image.png"
                           alt=""
                         />
                         <div class="overlay">
                           <div class="hovereffect-title project-icons">
-                            <a href="#x"><i class="ti-eye"></i></a>
-                            <a
-                              href="assets/images/placeholder.jpg"
-                              class="image-lightbox"
-                              title="PROJECT TITLE"
-                              ><i class="ti-arrows-corner"></i
+                            <a :href="`/boards/${board.id}`"
+                              ><i class="ti-eye"></i
                             ></a>
                           </div>
                           <!-- / project-icons -->
@@ -55,8 +54,27 @@
                       >{{ board.name }}</a
                     >
                     <br />
-                    <button>EDIT</button> <br />
-                    <button>DELETE</button>
+                    <p v-if="currentBoard == board">
+                      <input type="text" v-model="currentBoard.name" /><a
+                        class="btn btn-xs btn-success m-1"
+                        v-on:click="updateBoard(currentBoard)"
+                      >
+                        Update
+                      </a>
+                    </p>
+                    <a
+                      v-on:click="currentBoard = board"
+                      class="btn btn-primary m-1"
+                      >EDIT</a
+                    >
+                    <br />
+                    <a
+                      v-on:click="
+                        (currentBoard = board), destroyBoard(currentBoard)
+                      "
+                      class="btn btn-danger m-1"
+                      >DELETE</a
+                    >
                   </div>
                   <!-- / card-body -->
                 </div>
@@ -67,6 +85,13 @@
               <!-- / project -->
             </ul>
             <!-- / portfolio -->
+          </div>
+          <div>
+            <input type="text" placeholder="New board" v-model="newBoardName" />
+            <br />
+            <a class="btn btn-sm btn-primary" v-on:click="createBoard()"
+              >Add Board</a
+            >
           </div>
           <!-- / container -->
         </section>
@@ -122,6 +147,7 @@ export default {
         .patch(`/api/boards/${board.id}`, updateParams)
         .then((response) => {
           console.log("Successfully updated board", response.data);
+          this.currentBoard = {};
         })
         .catch((error) => {
           console.log(error.response.data.errors);

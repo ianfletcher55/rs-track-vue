@@ -5,8 +5,9 @@
       <nav class="navbar navbar-expand-lg navbar-inverse bg-inverse">
         <div class="container">
           <a class="navbar-brand" href="index.html"
-            ><img src="/assets/images/logo.png" alt=""
-          /></a>
+            ><img src="/assets/images/logo-placeholder.png" alt="" />
+            <p class="text-muted">OSRS-TRACK</p>
+          </a>
 
           <button
             class="navbar-toggler collapsed"
@@ -34,16 +35,11 @@
               <li class="nav-item" v-if="isLoggedIn()">
                 <a class="nav-link smooth-scroll" href="/logout">LOGOUT</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" v-if="!isLoggedIn()">
                 <a class="nav-link smooth-scroll" href="/login">LOGIN</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" v-if="!isLoggedIn()">
                 <a class="nav-link smooth-scroll" href="/signup">SIGN UP</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link smooth-scroll last-menu-item" href="/about"
-                  >ABOUT</a
-                >
               </li>
             </ul>
             <!-- / navbar-nav -->

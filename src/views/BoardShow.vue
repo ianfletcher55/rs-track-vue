@@ -8,10 +8,10 @@
         <!-- / section-heading -->
         <div class="row">
           <div class="col-md-4" v-for="list in board.lists">
-            <div class="pricing-table bg-white text-center raised">
+            <div class="pricing-table bg-inverse text-center raised">
               <div class="pricing-table-price">
                 <p class="title-color">
-                  <span class="pricing-price fs-28">{{ list.name }}</span>
+                  <span class="text-muted mb-0 pricing-price fs-28">{{ list.name }}</span>
                   <div v-if="list.name == 'Quests'">
                     <img src="/assets/images/quests-icon.png" alt="">
                   </div>
@@ -38,9 +38,9 @@
                   >
                     <i
                       v-on:click="destroyListQuest(quest, list)"
-                      class="ti-close mr-10 text-danger va-middle"
+                      class="btn ti-close mr-10 text-danger va-middle"
                     ></i
-                    ><span>{{ quest.name }}</span
+                    ><span class="text-muted mb-0">{{ quest.name }}</span
                     ><br />
                     <a
                       target="_blank"
@@ -61,9 +61,10 @@
                   >
                     <i
                       v-on:click="destroyListItem(item, list)"
-                      class="ti-close mr-10 text-danger va-middle"
+                      class="btn ti-close mr-10 text-danger"
                     ></i
                     ><span
+                      class="text-muted mb-0"
                       >{{ item.name }}
                       <img :src="`data:image/jpeg;base64,${item.icon}`"/></span
                     ><br />
@@ -84,12 +85,14 @@
                     class="list-group-item bt-0 bl-0 br-0 pl-0 bg-transparent"
                     v-for="note in list.notes"
                   >
-                    {{note.text}}
+                    <span class="text-muted mb-0">{{note.text}}</span>
                     <i
                       v-on:click="destroyNote(note, list)"
-                      class="ti-close mr-10 text-danger va-middle"
+                      class="btn ti-close mr-10 text-danger va-middle"
                     ></i
                     >
+                    <p v-if="currentNote == note">Text: <input type="text" v-model="currentNote.text"><a v-on:click="updateNote(currentNote)" class="btn btn-xs btn-success m-1">Update</a></p> <br>
+                    <a v-on:click="currentNote = note" class="btn btn-sm btn-primary m-1">Edit Note</a>
                   </li>
                 </ul>
                 <!-- / list-group -->
@@ -114,14 +117,14 @@
                     <div v-for="result in apiQuestResults">
                       <p>
                         {{ result.name
-                        }}<button
+                        }}<a class="btn btn-xs btn-success m-1"
                           v-on:click="
                             createListQuest(list, result),
                               (apiQuestResults = [])
                           "
                         >
                           Add Quest
-                        </button>
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -150,35 +153,34 @@
                     <div v-for="result in apiItemResults">
                       <p>
                         {{ result.name
-                        }}<button
+                        }}<a class="btn btn-xs btn-success m-1"
                           v-on:click="
                             createListItem(list, result), (apiItemResults = [])
                           "
                         >
                           Add Item
-                        </button>
+                        </a>
                       </p>
                     </div>
                   </div>
 
-                  <div class="pricing-table-button" v-if="list.name == 'Notes'">
-                    <div class="input-group mb-0 pl-10 pr-10">
-                      <input
-                      type="text"
-                      class="form-control rounded"
-                      placeholder="Note To Self"
-                      v-model="newNoteText"
-                    />
-                    <span class="input-group-btn v-center">
-                      <a
-                        v-on:click="createNote(list)"
-                        class="btn btn-icon b-0 rounded btn-primary ml-10"
-                        ><span class="ti-plus"></span
-                      ></a>
-                    </span>
-                    </div>
+                </div>
+                <div class="pricing-table-button" v-if="list.name == 'Notes'">
+                  <div class="input-group mb-0 pl-10 pr-10">
+                    <textarea
+                    type="text"
+                    class="form-control rounded"
+                    placeholder="Note To Self"
+                    v-model="newNoteText"
+                  />
+                  <span class="input-group-btn v-center">
+                    <a
+                      v-on:click="createNote(list)"
+                      class="btn btn-icon b-0 rounded btn-primary ml-10"
+                      ><span class="ti-plus"></span
+                    ></a>
+                  </span>
                   </div>
-                  
                 </div>
                 <!-- / pricing-table-button -->
               </div>
@@ -283,6 +285,7 @@ export default {
         .patch(`/api/notes/${note.id}`, updateParams)
         .then((response) => {
           console.log("Successfully updated note", response.data);
+          this.currentNote = {};
         })
         .catch((error) => {
           console.log(error.response.data.errors);

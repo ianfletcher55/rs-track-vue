@@ -15,7 +15,7 @@
                   id="register-form"
                   v-on:submit.prevent="submit()"
                 >
-                  <h5 class="mb-40">Sign Up</h5>
+                  <h5 class="text-muted mb-40">Sign Up</h5>
                   <ul>
                     <li class="text-danger" v-for="error in errors">
                       {{ error }}

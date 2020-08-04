@@ -13,72 +13,46 @@
         <div class="container">
           <div class="row v-center">
             <div class="col-md-7">
-              <h1 class="mb-10">OSRS-TRACK</h1>
-              <p class="mb-40 opc-75 fw-regular fs-18">
-                AN OLD SCHOOL RUNESCAPE COMPANION APP
-              </p>
-              <p class="mb-30">
-                Designed to make your journey through Gielinor a better one
-              </p>
-              <p class="mb-0">
-                <a href="/login" class="btn btn-primary m-10 ml-0 smooth-scroll"
-                  ><span>LOGIN</span></a
-                >
-              </p>
+              <div class="card card-inverse mt-20 mb-20 w90 ml-auto mr-0">
+                <div class="card-body">
+                  <h1 class="text-muted mb-10">OSRS-TRACK</h1>
+                  <p class="text-muted mb-40 opc-75 fw-regular fs-18">
+                    AN OLD SCHOOL RUNESCAPE COMPANION APP
+                  </p>
+                  <p class="text-muted mb-30">
+                    Designed to make your journey through Gielinor a better one.
+                  </p>
+                  <br />
+                  <p>Already have an account?</p>
+                  <p class="mb-0">
+                    <a
+                      href="/login"
+                      class="btn btn-primary m-10 ml-0 smooth-scroll"
+                      ><span>LOGIN</span></a
+                    >
+                  </p>
+                </div>
+              </div>
             </div>
             <!-- / column -->
             <div class="col-md-5">
-              <div class="card mt-20 mb-20 w90 ml-auto mr-0">
+              <div class="card card-inverse mt-20 mb-20 w90 ml-auto mr-0">
                 <div class="card-body">
                   <form class="validation-inner" id="register-form">
-                    <h6 class="mb-30">SIGN UP</h6>
-
-                    <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="usernameRegister"
-                        placeholder="Username"
-                        required
-                      />
+                    <h6 class="text-muted mb-30">SIGN UP</h6>
+                    <div>
+                      <p class="text-muted">
+                        Register below to begin creating your boards!
+                      </p>
                     </div>
-                    <!-- / form-group -->
 
-                    <div class="form-group">
-                      <input
-                        type="email"
-                        class="form-control"
-                        name="emailRegister"
-                        placeholder="Email"
-                      />
-                    </div>
-                    <!-- / form-group -->
-
-                    <div class="form-group">
-                      <input
-                        type="password"
-                        id="passwordRegister"
-                        class="form-control"
-                        name="passwordRegister"
-                        placeholder="Password"
-                      />
-                    </div>
-                    <!-- / form-group -->
-
-                    <div class="form-group">
-                      <input
-                        type="password"
-                        class="form-control"
-                        name="passwordRegisterConfirm"
-                        placeholder="Confirm Password"
-                        required
-                      />
-                    </div>
-                    <!-- / form-group -->
-
-                    <button type="submit" class="btn w-100 btn-primary">
+                    <a
+                      href="/signup"
+                      type="submit"
+                      class="btn w-100 btn-primary"
+                    >
                       REGISTER
-                    </button>
+                    </a>
                   </form>
                   <!-- / register-form -->
                 </div>

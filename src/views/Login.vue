@@ -16,7 +16,7 @@
                     id="login-form"
                     v-on:submit.prevent="submit()"
                   >
-                    <h5 class="mb-40">Log In</h5>
+                    <h5 class="text-muted mb-40">Log In</h5>
                     <ul>
                       <li class="text-danger" v-for="error in errors">
                         {{ error }}
@@ -49,7 +49,9 @@
                           <label class="hidden"><input type="checkbox"/></label>
                           <input id="checkbox1" type="checkbox" />
                           <label for="checkbox1"
-                            ><span class="fw-light">Remember Me</span></label
+                            ><span class=" text-muted fw-light"
+                              >Remember Me</span
+                            ></label
                           >
                         </div>
                         <!-- / checkbox -->
