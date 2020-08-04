@@ -1,0 +1,52 @@
+  <div class="board-show">
+    <div v-for="list in board.lists">
+      <div class="col-md-4">
+        <div class="card card-inverse dark raised move">
+          <div class="card-body">
+            <p class="fs-12 fw-regular mb-5">DARK NOTES</p>
+            <h6>MEDIA LIST</h6>
+            <ul class="list-unstyled list-media">
+              <li class="list-group-item bg-transparent b-0 pl-0">
+              <div class="list-media-content list-media-warning">
+                <i class="ti-home"></i>
+              </div><!-- / list-media-content -->
+              <div class="info">
+                <span class="title">Home</span>
+                <span class="sub-title">Main page</span>
+              </div><!-- / info -->
+              </li><!-- / list-group-item -->
+
+              <li class="list-group-item bg-transparent b-0 pl-0">
+                <div class="list-media-content list-media-primary">
+                  <i class="ti-user"></i>
+                </div><!-- / list-media-content -->
+                <div class="info">
+                  <span class="title">Profile</span>
+                  <span class="sub-title">Account info</span>
+                </div><!-- / info -->
+              </li><!-- / list-group-item -->
+
+              <li class="list-group-item bg-transparent b-0 pl-0">
+                <div class="list-media-content list-media-success">
+                  <i class="ti-email"></i>
+                </div><!-- / list-media-content -->
+                <div class="info">
+                  <span class="title">Messages</span>
+                  <span class="sub-title">View your messages</span>
+                </div><!-- / info -->
+              </li>
+
+              <li class="list-group-item bg-transparent b-0 pb-0 pl-0">
+                <div class="list-media-content list-media-info">
+                  <i class="ti-settings"></i>
+                </div><!-- / list-media-content -->
+                <div class="info">
+                  <span class="title">Settings</span>
+                  <span class="sub-title">Account settings</span>
+                </div><!-- / info -->
+              </li><!-- / list-group-item -->
+            </ul>
+          </div><!-- / card-body -->
+        </div><!-- / card -->
+      </div><!-- / column -->
+    </div>
