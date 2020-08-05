@@ -1,19 +1,15 @@
 <template>
   <div class="board-index">
     <div
-      class="full-height v-center"
-      style='background-image: url("../../assets/images/boards-index.jpeg");'
+      class="full-height bg-image"
+      style='background-image: url("../../assets/images/flat-steel.png");'
     >
       <div class="container">
         <section id="portfolio8" class="big">
           <div class="container">
             <div class="section-heading text-center">
-              <h2 class="mb-15">ALL BOARDS</h2>
-              <div class="spacer-line border-primary mb-20">&nbsp;</div>
-              <p class="w50 mb-20 m-x-auto">
-                Aenean luctus, quam eget elementum scelerisque, risus lectus
-                auctor lorem, aliquam interdum ex risus.
-              </p>
+              <h2 class="text-muted mb-15">ALL BOARDS</h2>
+              <div class="spacer-line border-muted mb-20">&nbsp;</div>
             </div>
             <!-- / section-heading -->
             <ul class="row portfolio lightbox list-unstyled mb-0">
@@ -29,7 +25,7 @@
                       <div class="hovereffect">
                         <img
                           class="img-responsive full-width v-center"
-                          src="assets/images/board-image.png"
+                          src="assets/images/boards-index.jpeg"
                           alt=""
                         />
                         <div class="overlay">
@@ -65,8 +61,8 @@
                     <a
                       v-on:click="currentBoard = board"
                       class="btn btn-primary m-1"
-                      >EDIT</a
-                    >
+                      ><i class="fas fa-edit"></i
+                    ></a>
                     <br />
                     <a
                       v-on:click="
@@ -90,7 +86,7 @@
             <input type="text" placeholder="New board" v-model="newBoardName" />
             <br />
             <a class="btn btn-sm btn-primary" v-on:click="createBoard()"
-              >Add Board</a
+              >ADD BOARD</a
             >
           </div>
           <!-- / container -->

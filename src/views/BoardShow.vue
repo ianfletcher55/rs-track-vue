@@ -1,9 +1,14 @@
 <template>
   <div class="board-show">
-    <section class="big">
+      <div
+      class="full-height bg-image"
+      style='background-image: url("../../assets/images/flat-steel.png");'
+    >
       <div class="container">
+        <section class="big">
         <div class="section-heading text-center">
-          <h2 class="mb-30">{{ board.name }}</h2>
+          <h2 class="text-muted mb-30">{{ board.name }}</h2>
+          <div class="spacer-line border-muted mb-20"></div>
         </div>
         <!-- / section-heading -->
         <div class="row">
@@ -24,23 +29,23 @@
                 </p>
               </div>
               <!-- / pricing-table-price -->
-              <div class="pricing-table-content">
+              <div class="pricing-table-content raised">
                 <!-- <div
                   class="promo-big promo-icon-bg circle border-grey mb-40 ml-auto mr-auto"
                 >
                   <i class="ti-layers promo-icon text-grey"></i>
                 </div> -->
                 <!-- / promo-big -->
-                <ul class="list-group mb-20">
+                <ul class="list-group mb-20" v-if="list.quests.length > 0">
                   <li
-                    class="list-group-item bt-0 bl-0 br-0 pl-0 bg-transparent"
+                    class="list-group-item bt-0 bl-0 br-0 bg-transparent raised"
                     v-for="quest in list.quests"
                   >
-                    <i
+                    <span class="text-muted mb-0">{{ quest.name }}</span
+                    ><i
                       v-on:click="destroyListQuest(quest, list)"
-                      class="btn ti-close mr-10 text-danger va-middle"
+                      class="btn btn-sm ti-close mr-10 text-danger va-middle"
                     ></i
-                    ><span class="text-muted mb-0">{{ quest.name }}</span
                     ><br />
                     <a
                       target="_blank"
@@ -54,19 +59,19 @@
                     ><br />
                   </li>
                 </ul>
-                <ul class="list-group mb-20">
+                <ul class="list-group mb-20" v-if="list.items.length > 0">
                   <li
-                    class="list-group-item bt-0 bl-0 br-0 pl-0 bg-transparent"
+                    class="list-group-item bt-0 bl-0 br-0 bg-transparent"
                     v-for="item in list.items"
                   >
-                    <i
-                      v-on:click="destroyListItem(item, list)"
-                      class="btn ti-close mr-10 text-danger"
-                    ></i
-                    ><span
+                    <span
                       class="text-muted mb-0"
                       >{{ item.name }}
                       <img :src="`data:image/jpeg;base64,${item.icon}`"/></span
+                    ><i
+                      v-on:click="destroyListItem(item, list)"
+                      class="btn btn-sm ti-close text-danger"
+                    ></i
                     ><br />
                     <a
                       target="_blank"
@@ -82,20 +87,22 @@
                 </ul>
                 <ul class="list-group mb-20">
                   <li
-                    class="list-group-item bt-0 bl-0 br-0 pl-0 bg-transparent"
+                    class="list-group-item bt-0 bl-0 br-0  bg-transparent"
                     v-for="note in list.notes"
                   >
                     <span class="text-muted mb-0">{{note.text}}</span>
                     <i
                       v-on:click="destroyNote(note, list)"
-                      class="btn ti-close mr-10 text-danger va-middle"
+                      class="btn btn-sm ti-close text-danger va-middle"
                     ></i
                     >
                     <p v-if="currentNote == note">Text: <input type="text" v-model="currentNote.text"><a v-on:click="updateNote(currentNote)" class="btn btn-xs btn-success m-1">Update</a></p> <br>
-                    <a v-on:click="currentNote = note" class="btn btn-sm btn-primary m-1">Edit Note</a>
+                    <a v-on:click="currentNote = note" class="btn btn-sm fas fa-edit"></a>
                   </li>
                 </ul>
                 <!-- / list-group -->
+
+                
                 <div class="pricing-table-button" v-if="list.name == 'Quests'">
                   <div class="input-group mb-0 pl-10 pr-10">
                     <input
@@ -106,28 +113,15 @@
                     />
                     <span class="input-group-btn v-center">
                       <a
-                        v-on:click="questKeywordSearch()"
+                        v-on:click="questKeywordSearch(); currentList = list"
                         class="btn btn-icon b-0 rounded btn-primary ml-10"
+                        data-toggle="modal" data-target="#questSearchModal"
                         ><span class="fas fa-search"></span
                       ></a>
                     </span>
                   </div>
 
-                  <div v-if="apiQuestResults">
-                    <div v-for="result in apiQuestResults">
-                      <p>
-                        {{ result.name
-                        }}<a class="btn btn-xs btn-success m-1"
-                          v-on:click="
-                            createListQuest(list, result),
-                              (apiQuestResults = [])
-                          "
-                        >
-                          Add Quest
-                        </a>
-                      </p>
-                    </div>
-                  </div>
+                
                 </div>
 
                 <div
@@ -143,25 +137,12 @@
                     />
                     <span class="input-group-btn v-center">
                       <a
-                        v-on:click="itemKeywordSearch()"
+                        v-on:click="itemKeywordSearch(); currentList = list"
                         class="btn btn-icon b-0 rounded btn-primary ml-10"
+                        data-toggle="modal" data-target="#itemSearchModal"
                         ><span class="fas fa-search"></span
                       ></a>
                     </span>
-                  </div>
-                  <div v-if="apiItemResults">
-                    <div v-for="result in apiItemResults">
-                      <p>
-                        {{ result.name
-                        }}<a class="btn btn-xs btn-success m-1"
-                          v-on:click="
-                            createListItem(list, result), (apiItemResults = [])
-                          "
-                        >
-                          Add Item
-                        </a>
-                      </p>
-                    </div>
                   </div>
 
                 </div>
@@ -177,7 +158,7 @@
                     <a
                       v-on:click="createNote(list)"
                       class="btn btn-icon b-0 rounded btn-primary ml-10"
-                      ><span class="ti-plus"></span
+                      ><span class="fas fa-plus-circle"></span
                     ></a>
                   </span>
                   </div>
@@ -185,15 +166,89 @@
                 <!-- / pricing-table-button -->
               </div>
               <!-- / pricing-table-content -->
-            </div>
+            </div>    
+
+            <!-- default-modal -->
+            <!-- modal -->
+            <div class="modal fade default-modal" tabindex="-1" role="dialog" id="questSearchModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title">Quest Search</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div><!-- / modal-header -->
+                        <div class="modal-body">    
+                          <div v-if="apiQuestResults">
+                            <div v-for="result in apiQuestResults">
+                              <p>
+                                {{ result.name
+                                }}<a class="btn btn-xs btn-success m-1"
+                                  v-on:click="
+                                    createListQuest(currentList, result),
+                                      (apiQuestResults = [])
+                                  "
+                                >
+                                  Add Quest
+                                </a>
+                              </p>
+                            </div>
+                          </div>
+                        </div><!-- / modal-body -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                        </div><!-- / modal-footer -->
+                    </div><!-- / modal-content -->
+                </div><!-- / modal-dialog -->
+            </div><!-- / modal -->
+            <!-- / default-modal -->
+
+            <!-- default-modal -->
+            <!-- modal -->
+            <div class="modal fade default-modal" tabindex="-1" role="dialog" id="itemSearchModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title">Item Search</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div><!-- / modal-header -->
+                        <div class="modal-body">    
+                          <div v-if="apiItemResults">
+                            <div v-for="result in apiItemResults">
+                              <p>
+                                {{ result.name
+                                }}<a class="btn btn-xs btn-success m-1" data-dismiss="modal"
+                                  v-on:click="
+                                    createListItem(currentList, result),
+                                      (apiItemResults = [])
+                                  "
+                                >
+                                  Add Item
+                                </a>
+                              </p>
+                            </div>
+                          </div>
+                        </div><!-- / modal-body -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                        </div><!-- / modal-footer -->
+                    </div><!-- / modal-content -->
+                </div><!-- / modal-dialog -->
+            </div><!-- / modal -->
+            <!-- / default-modal -->
+
             <!-- / pricing-table -->
-          </div>
+          </div>          
           <!-- / column -->
         </div>
-        <!-- / row -->
+        <!-- / row -->        
+        </section>
       </div>
       <!-- / container -->
-    </section>
+      </div>
     <!-- / pricing -->
 
     <!-- <h1>{{ board.name }}</h1>
@@ -260,6 +315,7 @@ export default {
       questKeyword: "",
       apiItemResults: [],
       apiQuestResults: [],
+      currentList: {}
     };
   },
   created: function() {
@@ -300,7 +356,7 @@ export default {
         .post("/api/notes", params)
         .then((response) => {
           console.log("Successfully created new note.", response.data);
-          list.notes.push(response.data);
+          list.notes.unshift(response.data);
           this.newNoteText = "";
         })
         .catch((error) => {
@@ -323,8 +379,9 @@ export default {
         .post("/api/list_items", params)
         .then((response) => {
           console.log("Successfully created new list_item.", response.data);
-          list.items.push(response.data);
+          list.items.unshift({id: response.data.item_id, name: response.data.name, icon: response.data.icon});
           this.itemKeyword = "";
+          $('#itemSearchModal').modal("toggle");
         })
         .catch((error) => {
           console.log(error.response.data.errors);
@@ -355,8 +412,9 @@ export default {
         .post("/api/list_quests", params)
         .then((response) => {
           console.log("Successfully created new list_quest.", response.data);
-          list.quests.push(response.data);
+          list.quests.unshift({id: response.data.quest_id, name: response.data.name});
           this.questKeyword = "";
+          $('#questSearchModal').modal("toggle");
         })
         .catch((error) => {
           console.log(error.response.data.errors);
