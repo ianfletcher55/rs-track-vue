@@ -17,10 +17,14 @@
                 <div class="card-body">
                   <h1 class="text-muted mb-10">OSRS-TRACK</h1>
                   <p class="text-muted mb-40 opc-75 fw-regular fs-18">
-                    AN OLD SCHOOL RUNESCAPE COMPANION APP
+                    <strong>AN OLD SCHOOL RUNESCAPE COMPANION APP</strong>
                   </p>
                   <p class="text-muted mb-30">
                     Designed to make your journey through Gielinor a better one.
+                    <br />
+                    <p class="text-muted mb-30">With OSRS-Track, users can create a board full of useful
+                    game info to keep their thoughts organized, and their XP
+                    gains coming!</p>
                   </p>
                   <br />
                   <p>Already have an account?</p>

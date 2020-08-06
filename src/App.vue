@@ -4,7 +4,7 @@
       <!-- <header class="bg-white pt-0 bg-img bg-fixed" style=""> -->
       <nav class="navbar navbar-expand-lg navbar-inverse bg-inverse">
         <div class="container">
-          <a class="navbar-brand" href="index.html"
+          <a class="navbar-brand" href="/"
             ><img src="/assets/images/logo-placeholder.png" alt="" />
             <p class="text-muted">OSRS-TRACK</p>
           </a>

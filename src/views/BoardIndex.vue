@@ -55,22 +55,19 @@
                         class="btn btn-xs btn-success m-1"
                         v-on:click="updateBoard(currentBoard)"
                       >
-                        Update
+                        SUBMIT
                       </a>
                     </p>
                     <a
                       v-on:click="currentBoard = board"
-                      class="btn btn-primary m-1"
-                      ><i class="fas fa-edit"></i
+                      class="btn btn-primary m-1 fas fa-edit"
                     ></a>
-                    <br />
                     <a
                       v-on:click="
                         (currentBoard = board), destroyBoard(currentBoard)
                       "
-                      class="btn btn-danger m-1"
-                      >DELETE</a
-                    >
+                      class="btn btn-danger m-1 fas fa-trash-alt"
+                    ></a>
                   </div>
                   <!-- / card-body -->
                 </div>

@@ -184,13 +184,12 @@
                             <div v-for="result in apiQuestResults">
                               <p>
                                 {{ result.name
-                                }}<a class="btn btn-xs btn-success m-1"
+                                }}<a class="btn btn-xs btn-primary m-1 fas fa-plus-circle"
                                   v-on:click="
                                     createListQuest(currentList, result),
                                       (apiQuestResults = [])
                                   "
                                 >
-                                  Add Quest
                                 </a>
                               </p>
                             </div>
@@ -220,13 +219,12 @@
                             <div v-for="result in apiItemResults">
                               <p>
                                 {{ result.name
-                                }}<a class="btn btn-xs btn-success m-1" data-dismiss="modal"
+                                }}<a class="btn btn-xs btn-primary m-1 fas fa-plus-circle" data-dismiss="modal"
                                   v-on:click="
                                     createListItem(currentList, result),
                                       (apiItemResults = [])
                                   "
                                 >
-                                  Add Item
                                 </a>
                               </p>
                             </div>
